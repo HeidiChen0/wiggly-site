@@ -4,6 +4,15 @@
 <meta charset="utf-8" />
 <title>Wiggly</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  Paddle.Environment.set('sandbox');
+  Paddle.Initialize({ token: 'test_dac8d6d2098a00c9e142e51f3e3' });
+  // Paddle.js auto-detects the _ptxn query param on load and opens the
+  // matching transaction's checkout overlay on top of this page — this
+  // page itself is only ever seen briefly underneath that overlay, or
+  // directly if someone lands here without a transaction in progress.
+</script>
 <style>
   body {
     margin: 0;
@@ -20,12 +29,16 @@
   }
   h1 { font-size: 28px; margin: 0 0 8px; }
   p { color: #9a90b8; font-size: 15px; margin: 0; }
+  a { color: #8b7bd8; }
 </style>
 </head>
 <body>
   <div>
     <h1>🫨 Wiggly</h1>
     <p>Thanks for trying Wiggly. Check your email for a receipt, then open the app and sign in.</p>
+    <p style="margin-top:16px;">
+      <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a>
+    </p>
   </div>
 </body>
 </html>
