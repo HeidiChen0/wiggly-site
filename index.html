@@ -2,43 +2,136 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Wiggly</title>
+<title>Wiggly — a cute desktop companion for your to-do list</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Wiggly is a floating desktop companion for macOS that holds a timer for your to-do list, with Pomodoro, a calendar that overlays Google and Apple Calendar, and optional cross-device sync." />
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script>
-  Paddle.Environment.set('sandbox');
-  Paddle.Initialize({ token: 'test_dac8d6d2098a00c9e142e51f3e3' });
+  Paddle.Initialize({ token: 'live_00e3848e460d9e11d9e7a422481' });
   // Paddle.js auto-detects the _ptxn query param on load and opens the
-  // matching transaction's checkout overlay on top of this page — this
-  // page itself is only ever seen briefly underneath that overlay, or
-  // directly if someone lands here without a transaction in progress.
+  // matching transaction's checkout overlay on top of this page — real
+  // purchases happen from inside the Wiggly app (Settings → Upgrade),
+  // which opens this URL with _ptxn attached. Visiting this page
+  // directly (no _ptxn) just shows the page content below.
 </script>
 <style>
+  :root {
+    --ink: #3b3350;
+    --muted: #9a90b8;
+    --accent: #8b7bd8;
+    --bg: #fbf9ff;
+    --line: #ece7f7;
+    --panel: #ffffff;
+  }
+  * { box-sizing: border-box; }
   body {
     margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fbf9ff;
-    color: #3b3350;
+    background: var(--bg);
+    color: var(--ink);
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Rounded", system-ui, sans-serif;
-    text-align: center;
-    padding: 24px;
-    box-sizing: border-box;
   }
-  h1 { font-size: 28px; margin: 0 0 8px; }
-  p { color: #9a90b8; font-size: 15px; margin: 0; }
-  a { color: #8b7bd8; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 40px; }
+
+  .hero { text-align: center; margin-bottom: 40px; }
+  .hero h1 { font-size: 34px; margin: 0 0 10px; }
+  .hero p { color: var(--muted); font-size: 16px; margin: 0 auto; max-width: 480px; line-height: 1.5; }
+  .platform { display: inline-block; margin-top: 16px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: var(--line); padding: 6px 14px; border-radius: 999px; }
+
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 16px; text-align: center; }
+
+  .features {
+    list-style: none; padding: 0; margin: 0 0 48px;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+  }
+  .features li {
+    background: var(--panel); border: 1.5px solid var(--line); border-radius: 12px;
+    padding: 14px 16px; font-size: 14px; line-height: 1.45;
+  }
+  .features li b { display: block; margin-bottom: 2px; }
+  @media (max-width: 520px) { .features { grid-template-columns: 1fr; } }
+
+  .pricing { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 12px; }
+  @media (max-width: 640px) { .pricing { grid-template-columns: 1fr 1fr; } }
+  .plan {
+    background: var(--panel); border: 1.5px solid var(--line); border-radius: 14px;
+    padding: 18px 14px; text-align: center;
+  }
+  .plan .name { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 6px; }
+  .plan .price { font-size: 20px; font-weight: 700; }
+  .plan .period { font-size: 12px; color: var(--muted); font-weight: 500; }
+  .plan .note { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .plan.pro { border-color: var(--accent); }
+
+  .cta { text-align: center; color: var(--muted); font-size: 13px; margin: 0 0 48px; }
+
+  .support {
+    text-align: center; background: var(--panel); border: 1.5px solid var(--line);
+    border-radius: 14px; padding: 20px; margin-bottom: 32px;
+  }
+  .support h2 { margin-bottom: 8px; }
+  .support a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .support a:hover { text-decoration: underline; }
+
+  footer { text-align: center; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  footer .by { margin-top: 6px; font-size: 12px; }
 </style>
 </head>
 <body>
-  <div>
-    <h1>🫨 Wiggly</h1>
-    <p>Thanks for trying Wiggly. Check your email for a receipt, then open the app and sign in.</p>
-    <p style="margin-top:16px;">
-      <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a>
-    </p>
+  <div class="wrap">
+    <div class="hero">
+      <h1>🫨 Wiggly</h1>
+      <p>A cute floating desktop companion for macOS that holds a countdown timer for your to-do list — with a Pomodoro tab, a calendar that overlays your real Google and Apple Calendar events, and optional cross-device sync.</p>
+      <span class="platform">macOS</span>
+    </div>
+
+    <h2>What's inside</h2>
+    <ul class="features">
+      <li><b>To-Do List</b> Paste tasks in from a spreadsheet, set a priority and duration, and start the timer straight from the list.</li>
+      <li><b>Floating gadget</b> An always-on-top companion that holds the running timer, so you always know what's next without switching windows.</li>
+      <li><b>Pomodoro</b> Classic 25/5/15 focus cycles that auto-advance, with a notification at every switch.</li>
+      <li><b>Timer &amp; Stopwatch</b> A standalone countdown or a simple stopwatch, whenever a task isn't the point.</li>
+      <li><b>Calendar</b> Drag tasks onto a real hourly grid — and see your actual Google and Apple Calendar busy times laid over it (Pro).</li>
+      <li><b>Cross-device sync</b> Sign in on another Mac and your to-do list is right there (Pro).</li>
+    </ul>
+
+    <h2>Pricing</h2>
+    <div class="pricing">
+      <div class="plan">
+        <div class="name">Free</div>
+        <div class="price">$0</div>
+        <div class="period">forever</div>
+        <div class="note">Fully local, no account needed</div>
+      </div>
+      <div class="plan pro">
+        <div class="name">Pro Monthly</div>
+        <div class="price">$1.99</div>
+        <div class="period">/ month</div>
+      </div>
+      <div class="plan pro">
+        <div class="name">Pro Yearly</div>
+        <div class="price">$15.99</div>
+        <div class="period">/ year</div>
+      </div>
+      <div class="plan pro">
+        <div class="name">Pro Lifetime</div>
+        <div class="price">$39.99</div>
+        <div class="period">once</div>
+        <div class="note">First 100 only</div>
+      </div>
+    </div>
+    <p class="cta">Pro adds cross-device sync, Google Calendar, and Apple Calendar. Upgrade anytime from Wiggly's own Settings tab — no separate signup required.</p>
+
+    <div class="support">
+      <h2>Support</h2>
+      <p>Questions, refund requests, or anything else — <a href="mailto:heidichen0926@gmail.com">heidichen0926@gmail.com</a></p>
+    </div>
+
+    <footer>
+      <div><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a></div>
+      <div class="by">Wiggly is made by Heidi Chen.</div>
+    </footer>
   </div>
 </body>
 </html>
