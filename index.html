@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <title>Wiggly — a cute desktop companion for your to-do list</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Wiggly is a floating desktop companion for macOS that holds a timer for your to-do list, with Pomodoro, a calendar that overlays Google and Apple Calendar, and optional cross-device sync." />
+<meta name="description" content="Wiggly is a floating desktop companion for macOS and Windows that holds a timer for your to-do list, with Pomodoro, a calendar that overlays Google (and, on Mac, Apple) Calendar, and optional cross-device sync." />
 <style>
   :root {
     --ink: #3b3350;
@@ -26,10 +26,12 @@
   .hero { text-align: center; margin-bottom: 40px; }
   .hero h1 { font-size: 34px; margin: 0 0 10px; }
   .hero p { color: var(--muted); font-size: 16px; margin: 0 auto; max-width: 480px; line-height: 1.5; }
-  .platform { display: inline-block; margin-top: 16px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: var(--line); padding: 6px 14px; border-radius: 999px; }
+  .platform { display: inline-block; margin-top: 16px; margin-right: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: var(--line); padding: 6px 14px; border-radius: 999px; }
 
+  .downloads { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+  .download-col { display: flex; flex-direction: column; align-items: center; }
   .download-btn {
-    display: inline-block; margin-top: 20px; background: var(--accent); color: #fff;
+    display: inline-block; background: var(--accent); color: #fff;
     font-weight: 700; font-size: 15px; text-decoration: none;
     padding: 12px 28px; border-radius: 999px;
   }
@@ -81,11 +83,19 @@
   <div class="wrap">
     <div class="hero">
       <h1>🫨 Wiggly</h1>
-      <p>A cute floating desktop companion for macOS that holds a countdown timer for your to-do list — with a Pomodoro tab, a calendar that overlays your real Google and Apple Calendar events, and optional cross-device sync.</p>
+      <p>A cute floating desktop companion that holds a countdown timer for your to-do list — with a Pomodoro tab, a calendar that overlays your real Google (and, on Mac, Apple) Calendar events, and optional cross-device sync.</p>
       <span class="platform">macOS</span>
-      <br />
-      <a class="download-btn" href="https://github.com/HeidiChen0/wiggly-releases/releases/latest/download/Wiggly.dmg">Download for Mac (free)</a>
-      <span class="download-note">Requires Apple Silicon (M1 or later) &middot; macOS 12+</span>
+      <span class="platform">Windows</span>
+      <div class="downloads">
+        <div class="download-col">
+          <a class="download-btn" href="https://github.com/HeidiChen0/wiggly-releases/releases/latest/download/Wiggly.dmg">Download for Mac (free)</a>
+          <span class="download-note">Requires Apple Silicon (M1 or later) &middot; macOS 12+</span>
+        </div>
+        <div class="download-col">
+          <a class="download-btn" href="https://github.com/HeidiChen0/wiggly-releases/releases/latest/download/Wiggly-Setup.exe">Download for Windows (free)</a>
+          <span class="download-note">Windows 10/11 &middot; 64-bit</span>
+        </div>
+      </div>
     </div>
 
     <h2>What's inside</h2>
@@ -94,7 +104,7 @@
       <li><b>Floating gadget</b> An always-on-top companion that holds the running timer, so you always know what's next without switching windows.</li>
       <li><b>Pomodoro</b> Classic 25/5/15 focus cycles that auto-advance, with a notification at every switch.</li>
       <li><b>Timer &amp; Stopwatch</b> A standalone countdown or a simple stopwatch, whenever a task isn't the point.</li>
-      <li><b>Calendar</b> Drag tasks onto a real hourly grid — and see your actual Google and Apple Calendar busy times laid over it (Pro).</li>
+      <li><b>Calendar</b> Drag tasks onto a real hourly grid — and see your actual Google Calendar busy times laid over it, plus Apple Calendar on Mac (Pro).</li>
       <li><b>Cross-device sync</b> Sign in on another Mac and your to-do list is right there (Pro).</li>
     </ul>
 
